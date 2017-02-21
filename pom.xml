@@ -491,6 +491,32 @@
                         <artifactId>maven-jxr-plugin</artifactId>
                         <version>2.1</version>
                     </plugin>
+                    <plugin>
+        <groupId>com.oracle.weblogic</groupId> 
+        <artifactId>weblogic-maven-plugin</artifactId> 
+        <version>12.1.1.0</version> 
+        <!-- These are for convenience, can be supplied on cmd line or exec mapping -->
+        <configuration>
+          <adminurl>t3://localhost:7001</adminurl>		
+          <user>weblogic</user>
+          <password>Welcome123</password>
+		  <upload>true</upload> 
+          <action>deploy</action> 
+          <remote>true</remote> 
+          <verbose>true</verbose>
+		  <targets>AdminServer</targets>
+          <name>gameoflife</name>
+          <source>target/gameoflife.war</source>          
+        </configuration> 
+        <!-- <executions>
+          <execution>
+            <phase>install</phase>
+			<goals> 
+              <goal>deploy</goal> 
+            </goals>
+          </execution> 
+          </executions> -->		
+      </plugin>
                 </plugins>
             </reporting>
         </profile>
